@@ -1,5 +1,7 @@
 <div class="container mt-4">
-  <div class="d-flex justify-content-between align-items-start">
+  
+  <div *ngIf="!userName" class="d-flex justify-content-between align-items-start">
+    <h4>.</h4>
     <button 
       (click)="loginWithGoogle()" 
       class="btn btn-light w-25"
@@ -7,7 +9,10 @@
     >
       Login com Google
     </button>
-    <h4 *ngIf="userName" class="texto-branco">{{ userName }}</h4>
+  </div>
+  
+  <div *ngIf="userName" class="d-flex justify-content-between align-items-start">
+    <h4 class="texto-branco">{{ userName }}</h4>
     <button 
       (click)="logout()" 
       class="btn btn-light w-25"
@@ -16,4 +21,5 @@
       Logout
     </button>
   </div>
+  
 </div>
