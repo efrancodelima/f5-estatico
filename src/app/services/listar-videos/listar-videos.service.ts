@@ -26,6 +26,10 @@ export class ListarVideosService {
 
   // Método público
   public listar(): void {
+
+    // Não envia a requisição se o usuário não estiver logado
+    if(!sessionStorage.getItem('tokenJWT')) return;
+
     const sub: Subscription = this.backEnd.listarVideos().subscribe({
       next: (resposta: Arquivo[]) => this._processarResposta(resposta),
       error: () => alert('Erro ao listar os vídeos do usuário!'),
