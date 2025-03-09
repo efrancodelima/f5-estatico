@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-start">
+    <button 
+      (click)="loginWithGoogle()" 
+      class="btn btn-light w-25"
+      *ngIf="!userName"
+    >
+      Login com Google
+    </button>
+    <h4 *ngIf="userName" class="texto-branco">{{ userName }}</h4>
+    <button 
+      (click)="logout()" 
+      class="btn btn-light w-25"
+      *ngIf="userName"
+    >
+      Logout
+    </button>
+  </div>
+</div>

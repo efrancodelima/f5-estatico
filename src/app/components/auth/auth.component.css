@@ -1,0 +1,20 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #357AE8;
+}

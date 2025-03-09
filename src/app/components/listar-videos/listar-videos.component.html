@@ -1,0 +1,30 @@
+<div class="container mt-4 pt-4" *ngIf="arquivos.length > 0">
+  <h5 class="text-end">Vídeos do usuário</h5>
+  <hr>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Arquivo</th>
+        <th scope="col">Enviado em</th>
+        <th scope="col">Status</th>
+        <th scope="col">Mensagem</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let arquivo of arquivos">
+        <td>{{ arquivo.nomeArquivo }}</td>
+        <td>{{ arquivo.timestampInicio }}</td>
+        <td>{{ arquivo.statusProcessamento }}</td>
+        <td>
+          {{ arquivo.mensagemErro ? arquivo.mensagemErro : '' }}
+          <span *ngIf="arquivo.linkDownload">
+            Link para download:
+            <a href="{{ arquivo.linkDownload }}" target="_blank">
+              {{ arquivo.linkDownload }}
+            </a>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
