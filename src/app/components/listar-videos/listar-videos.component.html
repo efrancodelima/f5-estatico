@@ -18,9 +18,8 @@
         <td>
           {{ arquivo.mensagemErro ? arquivo.mensagemErro : '' }}
           <span *ngIf="arquivo.linkDownload">
-            Link para download:
             <a href="{{ arquivo.linkDownload }}" target="_blank">
-              {{ arquivo.linkDownload }}
+              Clique aqui para baixar as imagens
             </a>
           </span>
         </td>

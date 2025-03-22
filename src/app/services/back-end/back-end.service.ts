@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Arquivo } from '../../interfaces/arquivo';
+import { BASE_URL } from '../../constants/url';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class BackEndService {
   // Métodos públicos
   enviarVideos(requisicao: FormData): Observable<void> {
 
-    const url = 'http://localhost:8080/video/upload';
+    const url = BASE_URL + '/video/upload';
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
@@ -23,7 +24,7 @@ export class BackEndService {
 
   listarVideos(): Observable<Arquivo[]> {
 
-    const url = 'http://localhost:8080/video/listar';
+    const url = BASE_URL + '/video/listar';
     const token = this.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 

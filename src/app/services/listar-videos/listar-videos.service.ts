@@ -10,7 +10,7 @@ export class ListarVideosService {
 
   // Atributo
   private _arquivos: Arquivo[] = [];
-
+  
   // Construtor
   constructor(private readonly backEnd: BackEndService) { }
 
