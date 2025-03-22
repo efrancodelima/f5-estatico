@@ -1,5 +1,15 @@
 <div class="container mt-4 pt-4" *ngIf="arquivos.length > 0">
-  <h5 class="text-end">Vídeos do usuário</h5>
+  <h5>
+    Vídeos do usuário &nbsp;
+    <!-- <button 
+      type="button" 
+      class="btn btn-secondary p-2"
+      (click)="atualizarLista()"
+    >
+      <span id="refresh">&#x21BB;</span>
+    </button> -->
+    <div class="loading" *ngIf="continuar"></div>
+  </h5>
   <hr>
   <table class="table table-striped">
     <thead>
