@@ -1,5 +1,16 @@
 <div class="container mt-4 pt-4" *ngIf="arquivos.length > 0">
-  <h5 class="text-end">Vídeos do usuário</h5>
+  <h5>
+    Vídeos do usuário &nbsp;
+    <!-- <button 
+      type="button" 
+      class="btn btn-secondary p-2 pt-0 pb-1"
+      *ngIf="!continuar"
+      (click)="atualizarLista()"
+    >
+      <span id="refresh">&#x21BB;</span>
+    </button> -->
+    <div class="loading" *ngIf="continuar"></div>
+  </h5>
   <hr>
   <table class="table table-striped">
     <thead>
@@ -18,9 +29,8 @@
         <td>
           {{ arquivo.mensagemErro ? arquivo.mensagemErro : '' }}
           <span *ngIf="arquivo.linkDownload">
-            Link para download:
             <a href="{{ arquivo.linkDownload }}" target="_blank">
-              {{ arquivo.linkDownload }}
+              Clique aqui para baixar as imagens
             </a>
           </span>
         </td>

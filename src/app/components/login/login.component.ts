@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit{
     const token = sessionStorage.getItem('tokenJWT');
     if (token) {
       this.setUserNameFromToken()
-      this.listarVideos.listar();
+      this.listarVideos.listar(true);
     };
   }
 
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit{
       user.getIdToken().then((token) => {
         sessionStorage.setItem('tokenJWT', token);
         this.setUserNameFromToken();
-        this.listarVideos.listar();
+        this.listarVideos.listar(true);
       });
       
     }).catch(() => undefined);
